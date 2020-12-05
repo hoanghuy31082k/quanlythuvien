@@ -5,7 +5,10 @@
  */
 package quanlythuvien;
 
+import GUI.Login;
+import GUI.MainForm;
 import UTILS.DBUtils;
+import java.awt.EventQueue;
 
 /**
  *
@@ -17,8 +20,18 @@ public class Quanlythuvien {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DBUtils a=new DBUtils();
-        a.getConnection();
-    }
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+//					Login frame = new Login();
+                                        MainForm frame= new MainForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+	}
     
 }
